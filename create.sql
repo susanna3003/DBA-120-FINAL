@@ -45,7 +45,7 @@ INSERT INTO Subjects (subID, sub_name, core, extr) VALUES
 (2, 'Science', 'Yes', 'No'),
 (3, 'English', 'Yes', 'No'),
 (4, 'History', 'Yes', 'No'),
-(5, 'Art', 'No', 'Yes')
+(5, 'Art', 'No', 'Yes'),
 (6, 'Physical Education', 'No', 'Yes'),
 (7, 'Music', 'No', 'Yes'),
 (8, 'Drama', 'No', 'Yes'),
@@ -62,7 +62,7 @@ INSERT INTO HasTaken (stuID, subID, taken, semester) VALUES
 (3, 4, TRUE, 'Spring 2024'),
 (4, 1, TRUE, 'Fall 2023'),
 (5, 1, TRUE, 'Fall 2023'),
-(5, 5, TRUE, 'Spring 2024')
+(5, 5, TRUE, 'Spring 2024'),
 (1, 6, TRUE, 'Fall 2023');
 
 INSERT INTO Grades (subID, stuID, grade_num, grade_letter) VALUES
@@ -75,5 +75,5 @@ INSERT INTO Grades (subID, stuID, grade_num, grade_letter) VALUES
 (4, 3, 92, 'A'),
 (1, 4, 78, 'C+'),
 (1, 5, 90, 'A-'),
-(5, 5, 85, 'B')
+(5, 5, 85, 'B'),
 (6, 1, 95, 'A');
