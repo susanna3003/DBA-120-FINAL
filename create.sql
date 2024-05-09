@@ -1,46 +1,48 @@
 CREATE DATABASE homeschoolDB;
 
-CREATE TABLE HasTaken (
+CREATE TABLE HASTAKEN (
   taken varchar(5) NOT NULL PRIMARY KEY,
-  stuID int NOT NULL,
-  subID int NOT NULL,
-  semester varchar(10),
+  stuID INT NOT NULL,
+  subID INT NOT NULL,
+  semester varchar(10)
   );
 
-CREATE TABLE Students (
-  stuID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE STUDENTS (
+  stuID INT NOT NULL PRIMARY KEY,
   stu_fname varchar(20) NOT NULL,
   stu_lname varchar(20) NOT NULL,
   stu_dob date NOT NULL,
   stu_email varchar(50),
-  stu_level int NOT NULL,
-  stu_gpa int
+  stu_level INT NOT NULL,
+  stu_gpa INT
   );
 
-CREATE TABLE Subjects (
-  subID int NOT NULL PRIMARY KEY,
+CREATE TABLE SUBJECTS (
+  subID INT NOT NULL PRIMARY KEY,
   sub_name varchar(20),
   core varchar(5),
   extr varchar(5),
-  taken varchar(5) NOT NULL FOREIGN KEY REFERENCES HasTaken(taken)
+  taken varchar(5), 
+  CONSTRAINT FK_SUBJECTS_HAS_TAKEN FOREIGN KEY (TAKEN) REFERENCES "HAS_TAKEN"(TAKEN)
 );
 
-CREATE TABLE Grades (
-  grID int NOT NULL PRIMARY KEY,
-  subID int NOT NULL,
-  grade_num int,
+CREATE TABLE GRADES (
+  grID INT NOT NULL PRIMARY KEY,
+  subID INT NOT NULL,
+  grade_num INT,
   grade_letter varchar(5),
-  stuID int NOT NULL FOREIGN KEY REFERENCES Students(stuID)
+  stuID INT NOT NULL, 
+  CONSTRAINT FK_GRADES_STUDENTS FOREIGN KEY (STU_ID) REFERENCES STUDENTS(STU_ID)
 );
 
-INSERT INTO Students (stu_fname, stu_lname, stu_dob, stu_email, stu_level, stu_gpa) VALUES
-('John', 'Doe', '2010-05-15', 'john.doe@example.com', 8, 3.8),
-('Jane', 'Doe', '2012-09-20', 'jane.doe@example.com', 6, 4.0),
-('Michael', 'Doe', '2008-02-28', 'michael.doe@example.com', 10, 3.5),
-('Emily', 'Doe', '2015-11-03', 'emily.doe@example.com', 3, NULL),
-('William', 'Doe', '2013-07-12', 'william.doe@example.com', 5, 3.2);
+INSERT INTO STUDENTS (stu_fname, stu_lname, stu_dob, stu_email, stu_level, stu_gpa) VALUES
+('John', 'Doe', '15-05-2010', 'john.doe@example.com', 8, 3.8),
+('Jane', 'Doe', '20-09-2012', 'jane.doe@example.com', 6, 4.0),
+('Michael', 'Doe', '28-02-2008', 'michael.doe@example.com', 10, 3.5),
+('Emily', 'Doe', '03-11-2015', 'emily.doe@example.com', 3, NULL),
+('William', 'Doe', '12-07-2013', 'william.doe@example.com', 5, 3.2);
 
-INSERT INTO Subjects (subID, sub_name, core, extr) VALUES
+INSERT INTO SUBJECTS (subID, sub_name, core, extr) VALUES
 (1, 'Math', 'Yes', 'No'),
 (2, 'Science', 'Yes', 'No'),
 (3, 'English', 'Yes', 'No'),
@@ -52,7 +54,7 @@ INSERT INTO Subjects (subID, sub_name, core, extr) VALUES
 (9, 'Computer Science', 'No', 'Yes'),
 (10, 'Foreign Language', 'No', 'Yes');
 
-INSERT INTO HasTaken (stuID, subID, taken, semester) VALUES
+INSERT INTO HASTAKEN (stuID, subID, taken, semester) VALUES
 (1, 1, TRUE, 'Fall 2023'),
 (1, 2, TRUE, 'Spring 2024'),
 (2, 1, TRUE, 'Fall 2023'),
@@ -65,7 +67,7 @@ INSERT INTO HasTaken (stuID, subID, taken, semester) VALUES
 (5, 5, TRUE, 'Spring 2024'),
 (1, 6, TRUE, 'Fall 2023');
 
-INSERT INTO Grades (subID, stuID, grade_num, grade_letter) VALUES
+INSERT INTO GRADES (subID, stuID, grade_num, grade_letter) VALUES
 (1, 1, 92, 'A'),
 (2, 1, 88, 'B+'),
 (1, 2, 95, 'A'),
