@@ -1,6 +1,6 @@
 CREATE DATABASE homeschoolDB;
 
-CREATE TABLE HASTAKEN (
+CREATE TABLE HAS_TAKEN (
   taken varchar(5) NOT NULL PRIMARY KEY,
   stuID INT NOT NULL,
   subID INT NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE GRADES (
   grade_num INT,
   grade_letter varchar(5),
   stuID INT NOT NULL, 
-  CONSTRAINT FK_GRADES_STUDENTS FOREIGN KEY (STU_ID) REFERENCES STUDENTS(STU_ID)
+  CONSTRAINT FK_GRADES_STUDENTS FOREIGN KEY (STUID) REFERENCES STUDENTS(STUID)
 );
 
 INSERT INTO STUDENTS (stu_fname, stu_lname, stu_dob, stu_email, stu_level, stu_gpa) VALUES
@@ -54,7 +54,7 @@ INSERT INTO SUBJECTS (subID, sub_name, core, extr) VALUES
 (9, 'Computer Science', 'No', 'Yes'),
 (10, 'Foreign Language', 'No', 'Yes');
 
-INSERT INTO HASTAKEN (stuID, subID, taken, semester) VALUES
+INSERT INTO HAS_TAKEN (stuID, subID, taken, semester) VALUES
 (1, 1, TRUE, 'Fall 2023'),
 (1, 2, TRUE, 'Spring 2024'),
 (2, 1, TRUE, 'Fall 2023'),
