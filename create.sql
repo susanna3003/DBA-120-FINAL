@@ -36,11 +36,11 @@ CREATE TABLE GRADES (
 );
 
 INSERT INTO STUDENTS (stu_fname, stu_lname, stu_dob, stu_email, stu_level, stu_gpa) VALUES
-('John', 'Doe', '15-05-2010', 'john.doe@example.com', 8, 3.8),
-('Jane', 'Doe', '20-09-2012', 'jane.doe@example.com', 6, 4.0),
-('Michael', 'Doe', '28-02-2008', 'michael.doe@example.com', 10, 3.5),
-('Emily', 'Doe', '03-11-2015', 'emily.doe@example.com', 3, NULL),
-('William', 'Doe', '12-07-2013', 'william.doe@example.com', 5, 3.2);
+('John', 'Doe', '15-MAY-2010', 'john.doe@example.com', 8, 3.8),
+('Jane', 'Doe', '20-SEPTEMBER-2012', 'jane.doe@example.com', 6, 4.0),
+('Michael', 'Doe', '28-FEBRUARY-2008', 'michael.doe@example.com', 10, 3.5),
+('Emily', 'Doe', '03-NOVEMBER-2015', 'emily.doe@example.com', 3, NULL),
+('William', 'Doe', '12-JULY-2013', 'william.doe@example.com', 5, 3.2);
 
 INSERT INTO SUBJECTS (subID, sub_name, core, extr) VALUES
 (1, 'Math', 'Yes', 'No'),
