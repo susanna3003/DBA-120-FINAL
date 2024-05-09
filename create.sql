@@ -42,7 +42,9 @@ INSERT INTO STUDENTS (stu_fname, stu_lname, stu_dob, stu_email, stu_level, stu_g
 ('Emily', 'Doe', '03-NOVEMBER-2015', 'emily.doe@example.com', 3, NULL),
 ('William', 'Doe', '12-JULY-2013', 'william.doe@example.com', 5, 3.2);
 
-INSERT INTO SUBJECTS (subID, sub_name, core, extr) VALUES
+INSERT INTO SUBJECTS 
+  (subID, sub_name, core, extr) 
+  VALUES
 (1, 'Math', 'Yes', 'No'),
 (2, 'Science', 'Yes', 'No'),
 (3, 'English', 'Yes', 'No'),
@@ -54,7 +56,9 @@ INSERT INTO SUBJECTS (subID, sub_name, core, extr) VALUES
 (9, 'Computer Science', 'No', 'Yes'),
 (10, 'Foreign Language', 'No', 'Yes');
 
-INSERT INTO HAS_TAKEN (stuID, subID, taken, semester) VALUES
+INSERT INTO HAS_TAKEN 
+  (stuID, subID, taken, semester) 
+  VALUES
 (1, 1, TRUE, 'Fall 2023'),
 (1, 2, TRUE, 'Spring 2024'),
 (2, 1, TRUE, 'Fall 2023'),
