@@ -2,11 +2,12 @@ CREATE DATABASE homeschoolDB;
 
 DROP TABLE IF EXISTS HAS_TAKEN;
 CREATE TABLE HAS_TAKEN (
-  taken varchar(5) NOT NULL PRIMARY KEY,
+  taken varchar(5) NOT NULL,
   stuID INT NOT NULL,
   subID INT NOT NULL,
-  semester varchar(20)
-  );
+  semester varchar(20),
+  PRIMARY KEY (stuID, subID)
+);
 
 CREATE TABLE STUDENTS (
   stuID INT NOT NULL PRIMARY KEY,
