@@ -82,7 +82,7 @@ INSERT INTO SUBJECTS (subID, sub_name, core, extr) VALUES
 (10, 'Foreign Language', 'No', 'Yes');
 
 INSERT INTO HAS_TAKEN (stuID, subID, taken, semester) VALUES
-(1, 1, TRUE, 'Fall 2023');
+(1, 1, 'TRUE', 'Fall 2023');
 
 INSERT INTO HAS_TAKEN (stuID, subID, taken, semester) VALUES
 (1, 2, 'TRUE', 'Spring 2024');
